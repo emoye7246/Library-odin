@@ -1,18 +1,66 @@
-const myLibrary = ["The lord of The Flies", "The Last Dance", "How the Grinch Stole Chrsitmas", "Night"];
+
+const myLibrary = [];
+
 
 function Book() {
   // the constructor...
 }
 
-function addBookToLibrary(title, pages, author, genre) {
+function addBookToLibrary(title, author, pages, genre) {
   
-    this.title = window.prompt("What is the Title if the book ?");
-    this.pages = window.prompt("How many pages does the book have ?");
-    this.author = window.prompt("Who is the author of this Book ?");
-    this.genre = window.prompt("What is the genre of this book ?");
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.genre = genre;
 
     this.bookInfo = function() {
-        console.log(`Book: ${this.title}, Pages: ${this.pages}, Author: ${this.author}, Genre: ${this.genre}`);
+      console.log(this.title, this.author, this.pages, this.genre);
+        myLibrary.push(this.title);
+
+        let para = document.createElement("p");
+        let contents = document.getElementById("contents");
+        contents.appendChild(para);
+        para.innerHTML = `Book: ${this.title}`;
+
+
+    
     }
+
   
 }
+
+
+// Buttons
+
+const dialog = document.getElementById("showDialog");
+const display = document.getElementById("displayDialog")
+const closeButton = document.querySelector("close");
+
+dialog.addEventListener("click", () => {
+
+display.showModal();
+
+});
+
+closeButton.addEventListener("click", (e) => {
+
+  e.preventDefault();
+  display.close();
+})
+
+
+
+
+
+
+let submit = document.getElementById("submit");
+
+submit.addEventListener("click", buttonClick, false);
+
+function buttonClick(event) {
+  event.preventDefault();
+}
+
+
+
+

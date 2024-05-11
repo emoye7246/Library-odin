@@ -7,7 +7,42 @@
     <link rel="stylesheet" href="../Library-odin/css/style.css">
 </head>
 <body>
-    <h1>Hello World</h1>
+    <h1>Welcome to the Library</h1>
+
+    <div class="display">
+        <p id="contents"></p>
+    </div>
+
+    
+
+    
+<dialog id="displayDialog">
+
+    
+    <form>
+        <label for="title">Title</label>
+        <input type="text" id="title" name="title" required>
+
+        <label for="author">Author</label>
+        <input type="text" id="author" name="author">
+
+        <label for="pages">Pages</label>
+        <input type="text" id="pages" name="pages">
+
+        <label for="genre">Genre</label>
+        <input type="text" id="genre" name="genre">
+
+        <button type="submit" id="submit">Sumbit</button>
+
+        <!-- Werid Case here but works as a button ??? -->
+        <input type="submit" id="close" value="Close">
+       
+    </form>
+
+</dialog>
+<button id="showDialog">Show Dialog</button>
+
+ 
 
 <script src="../Library-odin/java/java.js" defer></script>
 </body>
