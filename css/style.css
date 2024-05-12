@@ -4,6 +4,12 @@
     align-items: center;
 }
 
+body {
+    margin: 0;
+    height: 50vh;
+    width: 100vw;
+}
+
 #contents {
     color: green;
 }
@@ -18,7 +24,26 @@
 
 #contents > p {
 
+    
+ 
+}
+
+nav {
+
+    display: flex;
+    justify-content: space-between;
     border: 1px solid black;
-    height: 200px;
-    width: 200px;
+    background-color: brown;
+    box-shadow: 3px 3px 3px rgb(248, 181, 106);
+    padding: 20px;
+}
+
+
+.footer {
+    background-color: rgb(180, 180, 184);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 10%;
+    margin-top: 500px;
 }
