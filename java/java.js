@@ -19,15 +19,40 @@ function addBookToLibrary(title, author, pages, genre, summary) {
       console.log(title, author, pages, genre, summary);
         myLibrary.push(title);
 
+        // Toggle button starts
+        let toggle = document.createElement("label");
+        toggle.classList.add("switch");
+        toggle.htmlFor = "checkbox"
 
+        let slider = document.createElement("input");
+        slider.type = "checkbox";
+        slider.id = "checkbox";
+
+        let round = document.createElement("div");
+        round.classList.add("slider");
+        round.classList.add("round");
+
+        let read = document.createElement("p");
+        read.classList.add("straight");
+        read.innerHTML = "Have you Read ?";
+
+
+        toggle.appendChild(slider);
+        toggle.appendChild(round);
+
+        // Toggle button ends (This is for organiztional purposes gonna try and implement a function later but for now thatll dew)
         let removeButton = document.createElement("button");
         removeButton.type = "submit"
         removeButton.innerHTML = "Remove";
+        // removeButton.innerHTML = "<img src='IMages/Trash-Icon.png'>";
         let para = document.createElement("p");
         let contents = document.getElementById("contents");
         contents.appendChild(para);
-        para.innerHTML = `Book: ${title} <br> Author: ${author}`;
+        contents.appendChild(read);
+        para.innerHTML = `Book: ${title} <br> Author: ${author} `;
+        contents.appendChild(toggle);
         contents.appendChild(removeButton);
+        
 
         removeButton.addEventListener("click", (e) => {
 
@@ -35,6 +60,8 @@ function addBookToLibrary(title, author, pages, genre, summary) {
           e.preventDefault(); 
           para.remove();
           removeButton.remove();
+          toggle.remove();
+          read.remove();
         })
         
         

@@ -7,3 +7,13 @@ The objective now
 3. Display the results in the contents section of the html
 <!-- completed -->
 4. style with css
+
+5. Make the form clear
+
+6. Maybe add last book function
+
+7. add toggle slider
+
+8. Try and add Books that we reccomend tab maybe if time or if bored
+
+9. (Challenging) but make a counter for boooks read
