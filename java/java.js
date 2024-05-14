@@ -1,4 +1,5 @@
 
+
 const myLibrary = [];
 
 
@@ -16,53 +17,9 @@ function addBookToLibrary(title, author, pages, genre, summary) {
 
 
     this.bookInfo = function() {
+      const library = myLibrary;
       console.log(title, author, pages, genre, summary);
-        myLibrary.push(title);
-
-        // Toggle button starts
-        let toggle = document.createElement("label");
-        toggle.classList.add("switch");
-        toggle.htmlFor = "checkbox"
-
-        let slider = document.createElement("input");
-        slider.type = "checkbox";
-        slider.id = "checkbox";
-
-        let round = document.createElement("div");
-        round.classList.add("slider");
-        round.classList.add("round");
-
-        let read = document.createElement("p");
-        read.classList.add("straight");
-        read.innerHTML = "Have you Read ?";
-
-
-        toggle.appendChild(slider);
-        toggle.appendChild(round);
-
-        // Toggle button ends (This is for organiztional purposes gonna try and implement a function later but for now thatll dew)
-        let removeButton = document.createElement("button");
-        removeButton.type = "submit"
-        removeButton.innerHTML = "Remove";
-        // removeButton.innerHTML = "<img src='IMages/Trash-Icon.png'>";
-        let para = document.createElement("p");
-        let contents = document.getElementById("contents");
-        contents.appendChild(para);
-        contents.appendChild(read);
-        para.innerHTML = `Book: ${title} <br> Author: ${author} `;
-        contents.appendChild(toggle);
-        contents.appendChild(removeButton);
-        
-
-        removeButton.addEventListener("click", (e) => {
-
-  
-          e.preventDefault(); 
-          para.remove();
-          removeButton.remove();
-          toggle.remove();
-          read.remove();
-        })
+        library.push(title);
         
         
     }
@@ -70,6 +27,7 @@ function addBookToLibrary(title, author, pages, genre, summary) {
 
 const kobe = new addBookToLibrary('Muse', 'Kobe Bryant', '200 pages', 'Documentary');
 console.log(kobe.bookInfo());
+
 
 // UserInput
 
@@ -81,6 +39,29 @@ let inputGenre = document.getElementById("genre").value;
 
 let user = new addBookToLibrary(inputTitle, inputAuthor, inputPages, inputGenre);
 console.log(user.bookInfo());
+
+// Display contents of adding a new book will start here 
+
+let group = document.getElementById("display");
+let showBook = document.createElement("p");
+showBook.id = "showBook";
+showBook.innerHTML = `Book: ${inputTitle} <br> Author: ${inputAuthor};`
+group.appendChild(showBook);
+
+let removeButton = document.createElement("button");
+removeButton.type = "button";
+removeButton.innerHTML = "Remove";
+showBook.appendChild(removeButton);
+
+removeButton.addEventListener("click" , (e) => {
+
+  showBook.remove();
+  removeButton.remove();
+  e.preventDefault();
+
+})
+
+
 }
 
 // Buttons
@@ -113,7 +94,3 @@ submit.addEventListener("click", buttonClick, false);
 function buttonClick(event) {
   event.preventDefault();
 }
-
-
-
-
