@@ -16,20 +16,9 @@ function addBookToLibrary(title, author, pages, genre, summary) {
 
 
     this.bookInfo = function() {
+      const library = myLibrary;
       console.log(title, author, pages, genre, summary);
-        myLibrary.push(title);
-
-        
-
-        removeButton.addEventListener("click", (e) => {
-
-  
-          e.preventDefault(); 
-          para.remove();
-          removeButton.remove();
-          toggle.remove();
-          read.remove();
-        })
+        library.push(title);
         
         
     }
@@ -49,6 +38,29 @@ let inputGenre = document.getElementById("genre").value;
 
 let user = new addBookToLibrary(inputTitle, inputAuthor, inputPages, inputGenre);
 console.log(user.bookInfo());
+
+// Display contents of adding a new book will start here 
+
+let group = document.getElementById("display");
+let showBook = document.createElement("p");
+showBook.id = "showBook";
+showBook.innerHTML = `Book: ${inputTitle} <br> Author: ${inputAuthor};`
+group.appendChild(showBook);
+
+let removeButton = document.createElement("button");
+removeButton.type = "button";
+removeButton.innerHTML = "Remove";
+showBook.appendChild(removeButton);
+
+removeButton.addEventListener("click" , (e) => {
+
+  showBook.remove();
+  removeButton.remove();
+  e.preventDefault();
+
+})
+
+
 }
 
 // Buttons

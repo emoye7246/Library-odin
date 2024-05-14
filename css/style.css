@@ -13,37 +13,28 @@ body {
 }
 
 
-#contents {
+
+#display {
+    
     display: flex;
-    flex-wrap: nowrap;
-    color: green;
-    border: 1px solid black;
-    width: 100vw;
     flex-direction: row;
-    justify-content: space-evenly;
-}
+    flex-wrap: wrap;
 
-.straight {
-
-   flex-direction: column;
-    width: 150px;
-}
-
-
-#contents > p {
- 
-    flex-wrap: nowrap;
-    margin-bottom: 0px;
-    
-}
-
-.display {
-    
-    display: flex;
-    flex-direction: column;
    
 }
 
+#showBook {
+
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-evenly;
+  border: 1px solid black;
+  height: 200px;
+  width: 200px;
+  margin: auto;
+  padding: auto;
+}
 
 nav {
 
@@ -69,57 +60,3 @@ nav > .title {
     padding: 30px 10%;
     margin-top: 450px;
 }
-
-
-/* Theres no orginaztion here but oh well here is the toggle style */
-
-.switch {
-    display: inline-block;
-    height: 34px;
-    position: relative;
-    width: 60px;
-  }
-  
-  .switch input {
-    display:none;
-  }
-  
-  .slider {
-    background-color: #ccc;
-    bottom: 0;
-    cursor: pointer;
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-    transition: .4s;
-  }
-  
-  .slider:before {
-    background-color: #fff;
-    bottom: 4px;
-    content: "";
-    height: 26px;
-    left: 4px;
-    position: absolute;
-    transition: .4s;
-    width: 26px;
-  }
-  
-  input:checked + .slider {
-    background-color: #66bb6a;
-  }
-  
-  input:checked + .slider:before {
-    transform: translateX(26px);
-  }
-  
-  .slider.round {
-    border-radius: 34px;
-  }
-  
-  .slider.round:before {
-    border-radius: 50%;
-  }
-  
-  
