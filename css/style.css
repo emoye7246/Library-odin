@@ -18,9 +18,8 @@ body {
     flex-wrap: nowrap;
     color: green;
     border: 1px solid black;
-    height: 250px;
-    width: 250px;
-    flex-direction: column;
+    width: 100vw;
+    flex-direction: row;
     justify-content: space-evenly;
 }
 
