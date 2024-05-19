@@ -6,18 +6,18 @@ function Book() {
   // the constructor...
 }
 
-function addBookToLibrary(title, author, pages, genre, summary) {
+function addBookToLibrary(title, author, pages, genre, read) {
   
     this.title = title;
     this.author = author;
     this.pages = pages;
     this.genre = genre;
-    this.summary = summary;
+    this.read = read;
 
 
     this.bookInfo = function() {
       const library = myLibrary;
-      console.log(title, author, pages, genre, summary);
+      console.log(title, author, pages, genre, read);
         library.push(title);
         
         
@@ -46,19 +46,47 @@ let showBook = document.createElement("p");
 showBook.id = "showBook";
 showBook.innerHTML = `Book: ${inputTitle} <br> Author: ${inputAuthor};`
 group.appendChild(showBook);
-
+// Remove button elements
 let removeButton = document.createElement("button");
 removeButton.type = "button";
 removeButton.innerHTML = "Remove";
 showBook.appendChild(removeButton);
-
 removeButton.addEventListener("click" , (e) => {
 
   showBook.remove();
   removeButton.remove();
   e.preventDefault();
+})
+// Have read button 
+let readButton = document.createElement("button");
+readButton.type = "button";
+readButton.id = "readBtn";
+readButton.innerHTML = "Finsished ?";
+showBook.appendChild(readButton);
+
+readButton.addEventListener("click", () => {
+  if (readButton.innerHTML === "Have Not Read") {
+    readButton.innerHTML = "Read"; 
+    readButton.style.backgroundColor = "green"
+  }
+  else {
+    readButton.innerHTML = "Have Not Read";
+    readButton.style.backgroundColor = "red";
+  }
+  
+//  This loop doesnt make sense but whatever it works might want to swicth remove button and read button
+// Gonna make a yes or no function
 
 })
+  // Update number of Books Read
+
+
+
+
+
+
+
+
 
 
 }

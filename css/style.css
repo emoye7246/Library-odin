@@ -6,6 +6,10 @@
     /* outline: 2px solid red; */
 }
 
+button {
+    cursor: pointer;
+}
+
 body {
     margin: 0;
     height: 50vh;
@@ -51,6 +55,9 @@ nav > .title {
     margin-left: 100px;
 }
 
+/* Read button */
+
+
 
 .footer {
     background-color: rgb(180, 180, 184);
@@ -58,5 +65,5 @@ nav > .title {
     justify-content: center;
     align-items: center;
     padding: 30px 10%;
-    margin-top: 450px;
+    margin-top: 480px;
 }
