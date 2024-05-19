@@ -58,38 +58,55 @@ removeButton.addEventListener("click" , (e) => {
   e.preventDefault();
 })
 // Have read button 
-let readButton = document.createElement("button");
-readButton.type = "button";
-readButton.id = "readBtn";
-readButton.innerHTML = "Finsished ?";
-showBook.appendChild(readButton);
+let choice = document.createElement("div");
+let question = document.createElement("p");
+question.innerHTML = "Have you finished this book";
+let yesButton = document.createElement("button");
+yesButton.id = "yesBtn";
+yesButton.type = "button";
+yesButton.innerHTML = "Yes";
+let noButton = document.createElement("button");
+noButton.id = "noBtn";
+noButton.type = "button";
+noButton.innerHTML = "No";
+choice.appendChild(question);
+choice.appendChild(yesButton);
+choice.appendChild(noButton);
+showBook.appendChild(choice);
 
-readButton.addEventListener("click", () => {
-  if (readButton.innerHTML === "Have Not Read") {
-    readButton.innerHTML = "Read"; 
-    readButton.style.backgroundColor = "green"
+yesButton.addEventListener("click", () => {
+  if(yesButton.innerHTML === "Yes"){
+    yesButton.innerHTML = "Completed"
+    yesButton.style.backgroundColor = "green";
+    noButton.style.backgroundColor = "white";
+    noButton.innerHTML = "No";
   }
   else {
-    readButton.innerHTML = "Have Not Read";
-    readButton.style.backgroundColor = "red";
+    yesButton.innerHTML = "Yes"
+    yesButton.style.backgroundColor = "white";
+    noButton.style.backgroundColor = "white";
+    noButton.innerHTML = "No";
   }
-  
-//  This loop doesnt make sense but whatever it works might want to swicth remove button and read button
-// Gonna make a yes or no function
-
 })
-  // Update number of Books Read
-
-
-
-
-
-
-
-
-
+ noButton.addEventListener("click", () => {
+  if(noButton.innerHTML === "No"){
+    noButton.innerHTML = "Not Finished";
+    noButton.style.backgroundColor = "red";
+    yesButton.innerHTML = "Yes";
+    yesButton.style.backgroundColor = "white";
+  }
+  else {
+    noButton.innerHTML = "No";
+    noButton.style.backgroundColor = "white";
+    yesButton.innerHTML = "Yes";
+    yesButton.style.backgroundColor = "white";
+  }
+ })
 
 }
+// Were gonna have some fun with this one 
+// Update Books read 
+// Books Summary
 
 // Buttons
 

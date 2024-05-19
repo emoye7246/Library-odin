@@ -6,7 +6,7 @@
     /* outline: 2px solid red; */
 }
 
-button {
+button, #close {
     cursor: pointer;
 }
 
