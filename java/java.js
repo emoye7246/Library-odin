@@ -1,4 +1,4 @@
-
+let score = 0;
 const myLibrary = [];
 
 
@@ -53,11 +53,14 @@ removeButton.innerHTML = "Remove";
 showBook.appendChild(removeButton);
 removeButton.addEventListener("click" , (e) => {
 
+  count.innerHTML = `Number of Books read ${score-= 1}`;
   showBook.remove();
   removeButton.remove();
   e.preventDefault();
 })
 // Have read button 
+let count = document.getElementById("count");
+// counter is also editied here
 let choice = document.createElement("div");
 let question = document.createElement("p");
 question.innerHTML = "Have you finished this book";
@@ -80,12 +83,26 @@ yesButton.addEventListener("click", () => {
     yesButton.style.backgroundColor = "green";
     noButton.style.backgroundColor = "white";
     noButton.innerHTML = "No";
+    // counter
+    count.innerHTML = `Number of Books read ${score+= 1}`;
+    if(score < 0 ) {
+      count.innerHTML = `Number of Books read ${score = 0}`;
+    }
+    if (score == 5) {
+      alert("Congratualtions youve reas 5 books");
+    }
+    // counter
   }
   else {
     yesButton.innerHTML = "Yes"
     yesButton.style.backgroundColor = "white";
     noButton.style.backgroundColor = "white";
     noButton.innerHTML = "No";
+    count.innerHTML = `Number of Books read ${score-= 1}`;
+    if(score < 0 ) {
+      count.innerHTML = `Number of Books read ${score = 0}`;
+    }
+
   }
 })
  noButton.addEventListener("click", () => {
@@ -94,6 +111,10 @@ yesButton.addEventListener("click", () => {
     noButton.style.backgroundColor = "red";
     yesButton.innerHTML = "Yes";
     yesButton.style.backgroundColor = "white";
+    count.innerHTML = `Number of Books read ${score -= 1}`
+    if(score < 0 ) {
+      count.innerHTML = `Number of Books read ${score = 0}`;
+    }
   }
   else {
     noButton.innerHTML = "No";
@@ -107,6 +128,20 @@ yesButton.addEventListener("click", () => {
 // Were gonna have some fun with this one 
 // Update Books read 
 // Books Summary
+
+
+// Books That we reccomend
+
+function booksSuggest() {
+  let type = document.getElementById("genre").value;
+  let suggest = document.getElementById("suggest");
+  let reccomend = document.createElement("p");
+  suggest.appendChild(reccomend);
+  if(type == "Fiction") {
+    reccomend.innerHTML = "The last of us by Naughty Dog";
+  }
+}
+
 
 // Buttons
 
